@@ -9,19 +9,19 @@ interface MainNavItem {
 
 const mainNavItems: MainNavItem[] = [
   {
-    title: 'About Me',
+    title: 'O mnie',
     slug: '/'
   },
-  {
-    title: 'Resume',
-    slug: '/resume/'
-  },
+  // {
+  //   title: 'Resume',
+  //   slug: '/resume/'
+  // },
   {
     title: 'Blog',
     slug: '/blog/'
   },
   {
-    title: 'Contact Me',
+    title: 'Kontakt',
     slug: '/contact/'
   }
 ];
@@ -37,7 +37,6 @@ const MainNav: React.FC = () => {
             key={`nav-item-${index}`}
             to={item.slug}
             activeClassName="active"
-            whileTap={{ scale: 0.9 }}
           >
             {item.title}
           </Styled.MainNavItem>

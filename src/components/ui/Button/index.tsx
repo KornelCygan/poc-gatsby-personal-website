@@ -7,7 +7,7 @@ interface Props extends Styled.StyledProps {
 }
 
 const Button: React.FC<Props & React.ButtonHTMLAttributes<HTMLButtonElement>> = ({ primary, block, children }) => (
-  <Styled.Button primary={primary} block={block} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+  <Styled.Button primary={primary} block={block} whileHover={{ scale: 1.05 }} >
     {children}
   </Styled.Button>
 );
