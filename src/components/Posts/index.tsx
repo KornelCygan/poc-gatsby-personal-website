@@ -31,8 +31,20 @@ interface Post {
   };
 }
 
+interface newPost {
+  id: string,
+  slug: string,
+  title: string,
+  cover: {
+    fluid: any,
+  }
+  description: string,
+  date: string,
+}
+
 const Posts: React.FC = () => {
-  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
+  
+  const { markdownRemark, allMarkdownRemark, allDatoCmsArticle } = useStaticQuery(graphql`
     query {
       markdownRemark(frontmatter: { category: { eq: "blog section" } }) {
         frontmatter {
@@ -67,41 +79,55 @@ const Posts: React.FC = () => {
           }
         }
       }
+      allDatoCmsArticle {
+        nodes {
+          id
+          slug
+          title
+          cover {
+            fluid {
+              ...GatsbyDatoCmsFluid
+            }
+          }
+          description
+          date
+        }
+      }
     }
   `);
 
   const sectionTitle: SectionTitle = markdownRemark.frontmatter;
   const posts: Post[] = allMarkdownRemark.edges;
-
+  const datoCmsPosts: newPost[] = allDatoCmsArticle.nodes;
+    
   return (
     <Container section>
       <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
       <Styled.Posts>
-        {posts.map((item) => {
+        {datoCmsPosts.map((item) => {
           const {
-            id,
-            fields: { slug },
-            frontmatter: { title, cover, description, date, tags }
-          } = item.node;
+            id, slug , title, cover, description, date
+          } = item;
+          console.log('id',id)
 
           return (
             <Styled.Post key={id}>
               <Link to={slug}>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 1 }}>
+                <motion.div whileHover={{ scale: 1.05 }} >
                   <Styled.Card>
                     <Styled.Image>
-                      <Img fluid={cover.childImageSharp.fluid} alt={title} />
+                      <Img fluid={cover.fluid} alt={title} />
                     </Styled.Image>
                     <Styled.Content>
                       <Styled.Date>{date}</Styled.Date>
                       <Styled.Title>{title}</Styled.Title>
                       <Styled.Description>{description}</Styled.Description>
                     </Styled.Content>
-                    <Styled.Tags>
+                    {/* <Styled.Tags>
                       {tags.map((item) => (
                         <Styled.Tag key={item}>{item}</Styled.Tag>
                       ))}
-                    </Styled.Tags>
+                    </Styled.Tags> */}
                   </Styled.Card>
                 </motion.div>
               </Link>

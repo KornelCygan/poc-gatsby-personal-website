@@ -32,7 +32,7 @@ const Logo: React.FC = () => {
       <Styled.Image>
         <Img fluid={logoImage} alt={logoTitle} />
       </Styled.Image>
-      <Styled.Text>{logoTitle}</Styled.Text>
+      <Styled.Text>Power Of Code</Styled.Text>
     </Styled.Logo>
   );
 };
