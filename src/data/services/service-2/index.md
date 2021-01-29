@@ -1,6 +1,6 @@
 ---
 category: 'services'
-title: 'Graphic Design'
+title: 'Jak się przebranżowić'
 icon: 'draw-polygon'
-description: 'Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat.'
+description: 'Już od kilku lat pracuję jako programista. Z fizjoterapii do IT, nie było łatwo ale zdecydowanie było warto.'
 ---

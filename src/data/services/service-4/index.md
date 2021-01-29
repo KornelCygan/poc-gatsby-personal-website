@@ -1,6 +1,6 @@
 ---
 category: 'services'
-title: 'Digital Marketing'
+title: 'Stereotypy'
 icon: 'bullhorn'
-description: 'Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat.'
+description: 'Postaram się złamać kilka stereotypów o programistach. Otaczaj się ambitnymi, mądrymi i ciekawymi ludźmi.'
 ---
