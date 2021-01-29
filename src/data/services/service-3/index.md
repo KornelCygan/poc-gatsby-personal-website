@@ -1,6 +1,6 @@
 ---
 category: 'services'
-title: 'Copywrite'
+title: 'Praca'
 icon: 'edit'
-description: 'Mauris neque libero, aliquet vel mollis nec, euismod sed tellus. Mauris convallis dictum elit id volutpat.'
+description: 'Pokaże Ci jak wygląda i na czym polega moja praca jako Frontendowca i czy zawsze jest tak bajkowo.'
 ---
