@@ -38,8 +38,8 @@ const Layout: React.FC<Props> = ({ children }) => {
             transition={{ delay: 0.2 }}
           >
             {children}
-            <Newsletter />
-            <Footer />
+            {/* <Newsletter /> */}
+            {/* <Footer /> */}
           </motion.div>
         </Styled.Layout>
       </AnimatePresence>
